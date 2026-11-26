@@ -1,0 +1,26 @@
+{
+  "source": "https://kalimathastrology.com/puja-price-list-dehradun/",
+  "asOf": "2026-11-26",
+  "currency": "INR",
+  "note": "Fee in Dehradun; the same puja arranged at the Kalimath temple is Dehradun fee + 5,000 (performed by the temple's own priest). Kashi Vishwanath Temple, Ukhimath: 11,000 for all types of puja. Range fees are confirmed on WhatsApp before booking.",
+  "pujas": [
+    { "name": "Navgrah Shanti puja", "dehradun": 21000 },
+    { "name": "Mahamrityunjay jaap", "dehradun": 31000 },
+    { "name": "Devi-devta puja", "dehradun": 5100 },
+    { "name": "Satyanarayan katha", "dehradun": 11000 },
+    { "name": "Birth and marriage related puja (Vivah Badha Nivaran)", "dehradun": 11000 },
+    { "name": "Dosh nivaran and shanti puja (Kaal Sarp Dosh)", "dehradun": 11000 },
+    { "name": "Havan and jaap", "dehradun": 11000 },
+    { "name": "Rahu Shanti / Rahu Mahadasha puja", "dehradun": 21000 },
+    { "name": "Ketu Shanti puja", "dehradun": 21000 },
+    { "name": "Shani Sade Sati / Shani Mahadasha puja", "dehradun": 21000 },
+    { "name": "Santan prapti puja", "dehradun": 21000 },
+    { "name": "Education (shiksha) puja", "dehradun": 21000 },
+    { "name": "Pitra dosh puja", "dehradun": 11000 },
+    { "name": "Kaal Bhairav puja", "dehradunRange": [11000, 35000] },
+    { "name": "Rudrabhishek", "dehradunRange": [11000, 31000] },
+    { "name": "Griha kalesh shanti puja", "dehradunRange": [11000, 31000] },
+    { "name": "Nazar dosh nivaran puja", "dehradunRange": [11000, 31000] },
+    { "name": "Griha pravesh puja", "dehradunRange": [11000, 31000] }
+  ]
+}

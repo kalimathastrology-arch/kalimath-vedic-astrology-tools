@@ -1,0 +1,16 @@
+{
+  "name": "kalimath-vedic-astrology-tools",
+  "version": "1.0.0",
+  "description": "Guna milan (Ashtakoota) score and nakshatra / Moon-sign lookup in plain JavaScript, from Kalimath Astrology, Dehradun",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "sync-docs": "node scripts/sync-docs.js",
+    "example": "node examples/cli.js"
+  },
+  "keywords": ["vedic-astrology", "jyotish", "kundli", "guna-milan", "ashtakoota", "nakshatra", "rashi", "dehradun"],
+  "author": "Kalimath Astrology <https://kalimathastrology.com>",
+  "license": "MIT",
+  "homepage": "https://kalimathastrology.com/guna-milan/",
+  "engines": { "node": ">=18" }
+}

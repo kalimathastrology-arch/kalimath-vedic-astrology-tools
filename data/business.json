@@ -1,0 +1,74 @@
+{
+  "name": "Kalimath Astrology",
+  "alternateName": [
+    "कालीमठ एस्ट्रोलॉजी",
+    "Kalimath Astrology Dehradun"
+  ],
+  "url": "https://kalimathastrology.com/",
+  "telephone": "+91 99772 50909",
+  "address": {
+    "streetAddress": "10 Phase 2, Lane 3, Upasna Enclave, Panditwari",
+    "addressLocality": "Dehradun",
+    "addressRegion": "Uttarakhand",
+    "postalCode": "248007",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Every day 09:00-22:00, by appointment",
+  "languages": [
+    "hi",
+    "en"
+  ],
+  "founded": "About 2011 (15 years)",
+  "founder": "Late L.D. Bhatt",
+  "currentlyManagedBy": "The Bhatt brothers",
+  "pujaPandits": [
+    {
+      "name": "Pandit Harshwardhan Devshali",
+      "role": "Pujari at the Kalimath temple and at Kashi Vishwanath Temple, Ukhimath (11,000 INR for any type of puja there)",
+      "homeAddress": "Village Devshal, P.O. Banshu Jakhdhar, Guptkashi, Rudraprayag, Uttarakhand 246439"
+    },
+    {
+      "name": "Pandit Shri Prakash Benjwal",
+      "role": "Performs pujas arranged in Dehradun (as listed on the website)"
+    }
+  ],
+  "notAffiliatedWith": "The Kalimath temple and its trust. Kalimath Astrology is a private astrology and puja service.",
+  "googleRating": {
+    "value": 5.0,
+    "reviews": 11,
+    "asOf": "2026-11-08",
+    "source": "Google Business Profile"
+  },
+  "links": {
+    "website": "https://kalimathastrology.com/",
+    "hindi": "https://kalimathastrology.com/hi/",
+    "kundliMilan": "https://kalimathastrology.com/kundli-milan",
+    "kundliConsultation": "https://kalimathastrology.com/kundli-consultation",
+    "pujaPriceList": "https://kalimathastrology.com/puja-price-list-dehradun/",
+    "gunaMilanCalculator": "https://kalimathastrology.com/guna-milan/",
+    "freeTools": "https://kalimathastrology.com/free-astrology-tools/",
+    "about": "https://kalimathastrology.com/about",
+    "onlinePujaNRI": "https://kalimathastrology.com/online-puja-for-nri/",
+    "ukhimathPuja": "https://kalimathastrology.com/kashi-vishwanath-temple-ukhimath-puja/",
+    "book": "https://kalimathastrology.com/book/",
+    "pujaTable": "https://kalimathastrology.com/puja-dehradun/"
+  },
+  "pricesNote": "Prices in INR as published at https://kalimathastrology.com on 26 November 2026. The website is the source of truth.",
+  "consultations": [
+    {
+      "name": "Kundli Milan (horoscope matching, about 1 hour)",
+      "priceINR": 2100,
+      "mode": "In person in Panditwari, or online within India on a WhatsApp call"
+    },
+    {
+      "name": "Complete Kundli Consultation",
+      "priceINR": 5100,
+      "mode": "In person in Panditwari, Dehradun"
+    },
+    {
+      "name": "Online kundli analysis (WhatsApp call, for clients abroad)",
+      "priceINR": 5500,
+      "mode": "Online"
+    }
+  ]
+}

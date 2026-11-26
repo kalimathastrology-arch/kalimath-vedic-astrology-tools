@@ -1,0 +1,39 @@
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://kalimathastrology.com/#business",
+  "name": "Kalimath Astrology",
+  "alternateName": ["कालीमठ एस्ट्रोलॉजी", "Kalimath Astrology Dehradun"],
+  "url": "https://kalimathastrology.com/",
+  "telephone": "+91-99772-50909",
+  "description": "Astrologer and puja service in Panditwari, Dehradun: Kundli Milan, Complete Kundli Consultation and traditional pujas. Started about 15 years ago by Late L.D. Bhatt and now managed by the Bhatt brothers. A private service, not affiliated with the Kalimath temple.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "10 Phase 2, Lane 3, Upasna Enclave, Panditwari",
+    "addressLocality": "Dehradun",
+    "addressRegion": "Uttarakhand",
+    "postalCode": "248007",
+    "addressCountry": "IN"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+    "opens": "09:00",
+    "closes": "22:00"
+  },
+  "knowsLanguage": ["hi", "en"],
+  "areaServed": [
+    { "@type": "City", "name": "Dehradun" },
+    { "@type": "State", "name": "Uttarakhand" },
+    { "@type": "Country", "name": "India" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Astrology consultations",
+    "itemListElement": [
+      { "@type": "Offer", "price": "2100", "priceCurrency": "INR", "itemOffered": { "@type": "Service", "name": "Kundli Milan (about 1 hour)", "url": "https://kalimathastrology.com/kundli-milan" } },
+      { "@type": "Offer", "price": "5100", "priceCurrency": "INR", "itemOffered": { "@type": "Service", "name": "Complete Kundli Consultation", "url": "https://kalimathastrology.com/kundli-consultation" } },
+      { "@type": "Offer", "price": "5500", "priceCurrency": "INR", "itemOffered": { "@type": "Service", "name": "Online kundli analysis (WhatsApp call)", "url": "https://kalimathastrology.com/online-puja-for-nri/" } }
+    ]
+  }
+}

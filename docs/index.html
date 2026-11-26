@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guna milan (Ashtakoota) calculator demo | kalimath-vedic-astrology-tools</title>
+<meta name="description" content="Open-source guna milan score and nakshatra lookup in plain JavaScript. Demo of the library from Kalimath Astrology, Dehradun.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><a href="./">Demo</a><a href="methodology.html">Methodology</a><a href="https://github.com/kalimathastrology-arch/kalimath-vedic-astrology-tools">Source on GitHub</a></nav>
+<h1>Guna milan calculator</h1>
+<p>Pick each person's Moon nakshatra and rashi to get the traditional 36-point Ashtakoota score, koota by koota. It runs in your browser and nothing is sent anywhere. This is the open-source library behind the calculator on <a href="https://kalimathastrology.com/guna-milan/">kalimathastrology.com</a>.</p>
+
+<form id="f">
+  <label for="g">Groom's nakshatra and rashi</label><select id="g"></select>
+  <label for="b">Bride's nakshatra and rashi</label><select id="b"></select>
+  <button type="submit">Calculate</button>
+</form>
+<div id="out" aria-live="polite"></div>
+
+<h2>Nakshatra from the Moon's longitude</h2>
+<p>If you have the Moon's sidereal longitude from a chart, enter it in degrees (0 to 360).</p>
+<form id="lf"><label for="lon">Sidereal longitude (degrees)</label><input id="lon" type="number" step="any" min="0" max="360" value="45.5" style="font:inherit;padding:.5rem;width:100%;box-sizing:border-box"><button type="submit">Look up</button></form>
+<div id="lout" aria-live="polite"></div>
+
+<p class="note">A guna total compares the two Moons only. It does not look at Manglik dosh, the 7th house, dashas or the rest of the two charts, and it should not decide a marriage on its own. For a proper reading of both kundlis, <a href="https://kalimathastrology.com/kundli-milan">Kundli Milan</a> at Kalimath Astrology, Panditwari, Dehradun is ₹2,100, in person or online within India (WhatsApp +91 99772 50909).</p>
+
+<footer>
+<p>Kalimath Astrology · 10 Phase 2, Lane 3, Upasna Enclave, Panditwari, Dehradun, Uttarakhand 248007 · <a href="https://kalimathastrology.com">kalimathastrology.com</a></p>
+<p>MIT licensed. <a href="https://github.com/kalimathastrology-arch/kalimath-vedic-astrology-tools">Code on GitHub</a>.</p>
+</footer>
+
+<script src="lib/names.js"></script>
+<script src="lib/guna.js"></script>
+<script src="lib/nakshatra.js"></script>
+<script>
+(function () {
+  var N = window.VedicNames, G = window.GunaMilan, X = window.VedicNakshatra;
+  function fill(sel) {
+    var o = document.createElement("option"); o.value = ""; o.textContent = "Choose…"; sel.appendChild(o);
+    for (var n = 0; n < 27; n++) G.NAK_RASHI[n].forEach(function (r) {
+      var e = document.createElement("option"); e.value = n + "-" + r;
+      e.textContent = N.nakshatra.en[n] + " (" + N.nakshatra.hi[n] + ") — " + N.rashi.en[r]; sel.appendChild(e);
+    });
+  }
+  var g = document.getElementById("g"), b = document.getElementById("b"), out = document.getElementById("out");
+  fill(g); fill(b);
+  function p(v) { var a = v.split("-"); return { nak: +a[0], rashi: +a[1] }; }
+  function f(x) { return x % 1 ? x.toFixed(1) : String(x); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  document.getElementById("f").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (!g.value || !b.value) { out.innerHTML = "<p>Please choose both nakshatras.</p>"; return; }
+    var r = G.score(p(g.value), p(b.value)), k = r.kootas, i = r.info;
+    var max = { varna: 1, vashya: 2, tara: 3, yoni: 4, maitri: 5, gana: 6, bhakoot: 7, nadi: 8 };
+    var rows = "";
+    Object.keys(max).forEach(function (key) { rows += "<tr><th scope=\"row\">" + esc(N.koota.en[key]) + "</th><td>" + f(k[key]) + " / " + max[key] + "</td></tr>"; });
+    var band = r.total < 18 ? N.band.en[0] : r.total <= 24 ? N.band.en[1] : r.total <= 32 ? N.band.en[2] : N.band.en[3];
+    var notes = "";
+    if (r.notes.nadiDosha) notes += "<li>Same nadi (nadi dosha).</li>";
+    if (r.notes.bhakootDosha) notes += "<li>Bhakoot dosha (signs 6/8, 5/9 or 2/12 apart).</li>";
+    if (r.notes.ganaLow) notes += "<li>Low gana points.</li>";
+    out.innerHTML = "<p class=\"total\">Total: " + f(r.total) + " / 36</p><p>" + esc(band) + "</p><table><tbody>" + rows + "</tbody></table>" + (notes ? "<ul>" + notes + "</ul>" : "");
+  });
+  var lout = document.getElementById("lout");
+  document.getElementById("lf").addEventListener("submit", function (e) {
+    e.preventDefault();
+    var v = parseFloat(document.getElementById("lon").value);
+    if (!isFinite(v)) { lout.innerHTML = "<p>Enter a number of degrees.</p>"; return; }
+    var r = X.fromLongitude(v);
+    lout.innerHTML = "<p><strong>" + esc(r.nakshatra.en) + "</strong> (" + esc(r.nakshatra.hi) + "), pada " + r.nakshatra.pada + ", in <strong>" + esc(r.rashi.en) + "</strong> (" + esc(r.rashi.hi) + ", " + esc(r.rashi.western) + ")</p>";
+  });
+})();
+</script>
+</body>
+</html>

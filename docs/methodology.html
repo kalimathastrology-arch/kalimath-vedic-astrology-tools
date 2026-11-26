@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guna milan conventions used | kalimath-vedic-astrology-tools</title>
+<meta name="description" content="The exact Varna, Vashya, Tara, Yoni, Graha Maitri, Gana, Bhakoot and Nadi conventions used by this guna milan library, and why another app may differ by a point or two.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav><a href="./">Demo</a><a href="methodology.html">Methodology</a><a href="https://github.com/kalimathastrology-arch/kalimath-vedic-astrology-tools">Source on GitHub</a></nav>
+<h1>Conventions used for the 36 points</h1>
+<p>Almanacs and apps agree on most of the 36 points but differ on a few table cells. So that you can check a result, these are the conventions in <code>src/guna.js</code>. The groom's values come first in each table lookup unless noted.</p>
+
+<table>
+<thead><tr><th>Koota</th><th>Max</th><th>Read from</th><th>Rule used here</th></tr></thead>
+<tbody>
+<tr><th scope="row">Varna</th><td>1</td><td>Moon sign</td><td>Cancer, Scorpio, Pisces Brahmin; Aries, Leo, Sagittarius Kshatriya; Taurus, Virgo, Capricorn Vaishya; Gemini, Libra, Aquarius Shudra. 1 point when the groom's varna is equal to or higher than the bride's.</td></tr>
+<tr><th scope="row">Vashya</th><td>2</td><td>Moon sign</td><td>Whole-sign groups (Chatushpada, Manava, Jalachara, Vanachara, Keeta) with the graded 2 / 1 / ½ / 0 table most calculators print. Sagittarius is Manava and Capricorn is Jalachara; no split by degree.</td></tr>
+<tr><th scope="row">Tara</th><td>3</td><td>Nakshatra</td><td>Counted inclusively from each star to the other. A remainder of 3, 5 or 7 (after dividing by 9) is unfavourable. 1.5 points for each favourable direction.</td></tr>
+<tr><th scope="row">Yoni</th><td>4</td><td>Nakshatra</td><td>Symmetric 14-animal table, 0 for the seven enemy pairs.</td></tr>
+<tr><th scope="row">Graha Maitri</th><td>5</td><td>Lords of the Moon signs</td><td>Natural friendship of the two sign lords, taken both ways: 5, 4, 3, 1, ½ or 0.</td></tr>
+<tr><th scope="row">Gana</th><td>6</td><td>Nakshatra</td><td>6 for the same gana. Deva groom with Manushya bride 5, the reverse 6. Rakshasa bride with Deva groom 1. Other Rakshasa pairs 0.</td></tr>
+<tr><th scope="row">Bhakoot</th><td>7</td><td>Distance between Moon signs</td><td>0 when the signs are 2/12, 5/9 or 6/8 apart, otherwise 7. Traditional cancellations (same sign lord, or friendly lords with a clean nadi) are reported in <code>notes</code>; the points are not changed.</td></tr>
+<tr><th scope="row">Nadi</th><td>8</td><td>Nakshatra</td><td>0 when both stars are in the same nadi (Adi, Madhya or Antya), otherwise 8.</td></tr>
+</tbody></table>
+
+<h2>Checks</h2>
+<p>The test suite includes a koota-by-koota worked example (groom Rohini in Vrishabha, bride Dhanishta in Kumbha: 27 of 36) and checks that every one of the possible nakshatra and rashi pairs gives a total between 0 and 36 that equals the sum of its eight parts. Some almanacs split Sagittarius and Capricorn by degree, use a different gana or yoni cell, or fold bhakoot cancellations into the points, so another app can show a point or two more or less. If you can point to a published table that disagrees with one of these cells, please open an issue.</p>
+
+<h2>Nakshatra lookup</h2>
+<p>The sidereal zodiac is divided into 27 nakshatras of 13°20′ each, each with four padas of 3°20′, and 12 rashis of 30°. A sidereal Moon longitude therefore gives the nakshatra, pada and rashi directly. The library does not calculate the Moon's position from a birth time; that needs an ephemeris and a choice of ayanamsa.</p>
+
+<h2>Limits</h2>
+<p class="note">A guna score compares the two Moons only. It does not look at Manglik dosh, the 7th house, dasha periods or the rest of the two charts, and it should never override the couple's own consent. If you want both charts read properly, Kalimath Astrology in Panditwari, Dehradun offers <a href="https://kalimathastrology.com/kundli-milan">Kundli Milan</a> (₹2,100). The same method is explained for general readers on <a href="https://kalimathastrology.com/guna-milan/">kalimathastrology.com/guna-milan</a>.</p>
+
+<footer><p>Kalimath Astrology · 10 Phase 2, Lane 3, Upasna Enclave, Panditwari, Dehradun, Uttarakhand 248007 · +91 99772 50909 · <a href="https://kalimathastrology.com">kalimathastrology.com</a></p></footer>
+</body>
+</html>
