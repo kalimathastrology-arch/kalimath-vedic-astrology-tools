@@ -4,7 +4,7 @@
   "description": "Guna milan (Ashtakoota) score and nakshatra / Moon-sign lookup in plain JavaScript, from Kalimath Astrology, Dehradun",
   "main": "src/index.js",
   "scripts": {
-    "test": "node --test \"test/*.test.js\"",
+    "test": "node --test test/guna.test.js test/nakshatra.test.js",
     "sync-docs": "node scripts/sync-docs.js",
     "example": "node examples/cli.js"
   },
